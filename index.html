@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="assets\favicon.svg" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="scripts.js" defer></script>
+    <title>Career Development Plan</title>
+  </head>
+  <body>
+    <!--------------- Navigation Sidebar --------------->
+    <nav>
+      <img src="assets\logo-light.svg" alt="Kanban Logo" class="logo" />
+      <div class="nav-item">
+        <h6>ALL BOARDS (1)</h6>
+      </div>
+      <div>
+        <button>
+          <p id="button-text">Launch Career</p>
+        </button>
+      </div>
+    </nav>
+
+    <!--------------- Task Modal --------------->
+    <dialog id="taskModal" class="task-dialog">
+      <form method="dialog" class="task-form">
+        <div class="modal-header">
+          <h2 class="modal-title">Task</h2>
+          <button type="button" class="close-btn" aria-label="Close">✖</button>
+        </div>
+        <label>
+          Title
+          <input type="text" id="task-title" />
+        </label>
+        <label>
+          Description
+          <textarea id="task-desc" rows="4"></textarea>
+        </label>
+        <label>
+          Status
+          <select id="task-status">
+            <option value="todo">todo</option>
+            <option value="doing">doing</option>
+            <option value="done">done</option>
+          </select>
+        </label>
+      </form>
+    </dialog>
+
+    <!--------------- Header --------------->
+    <header>
+      <div>
+        <h1>
+          <span
+            ><img
+              src="assets\favicon.svg"
+              alt="Mobile-only image"
+              class="mobile-only-logo" /></span
+          >Launch Career
+        </h1>
+      </div>
+    </header>
+
+    <!--------------- Section Columns --------------->
+    <!-- TODO Column -->
+    <section class="task-todo">
+      <div>
+        <h6><span class="status-todo"></span>TODO (4)</h6>
+      </div>
+      <!-- Tasks container for TODO -->
+      <ul>
+        <li data-task-id="1"></li>
+        <li data-task-id="2"></li>
+        <li>
+          <p>Crush Frameworks 🖼️</p>
+        </li>
+        <li>
+          <p>Conquer React ⚛️</p>
+        </li>
+      </ul>
+    </section>
+
+    <!-- DOING Column -->
+    <section class="task-doing">
+      <div>
+        <h6><span class="status-doing"></span>DOING (2)</h6>
+      </div>
+      <!-- Tasks container for DOING -->
+      <ul>
+        <li data-task-id="3"></li>
+        <li data-task-id="11"></li>
+      </ul>
+    </section>
+
+    <!-- DONE Column -->
+    <section class="task-done">
+      <div>
+        <h6><span class="status-done"></span>DONE (2)</h6>
+      </div>
+      <!-- Tasks container for DONE -->
+      <ul>
+        <li data-task-id="12"></li>
+        <li data-task-id="13"></li>
+      </ul>
+    </section>
+  </body>
+</html>

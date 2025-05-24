@@ -1,0 +1,280 @@
+/* ---------------Global--------------- */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Plus Jakarta Sans, sans-serif;
+}
+/* ---------------Typography--------------- */
+h1 {
+  font-weight: 700;
+  font-size: 1.4rem;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #000112;
+}
+
+h6 {
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 100%;
+  letter-spacing: 0.15em;
+  color: #828fa3;
+}
+
+p {
+  font-weight: 700;
+  font-size: 0.9rem;
+  line-height: 100%;
+  letter-spacing: 0em;
+  color: #000112;
+}
+
+#button-text {
+  color: #ffffff;
+  text-align: center;
+}
+
+a {
+  color: #000112;
+  transition: color 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+/* ---------------Layout--------------- */
+body,
+html {
+  height: 100vh;
+  background-color: #f4f7fd;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  grid-template-columns: 22% 21% 21% 21% 15%;
+  grid-template-rows: 10vh auto;
+  grid-template-areas:
+    "nav header header header header"
+    "nav section1 section2 section3 section";
+}
+
+nav {
+  grid-area: nav;
+  border-right: 1px solid #e4ebfa;
+  background-color: #ffffff;
+}
+
+header {
+  grid-area: header;
+  border-bottom: 1px solid #e4ebfa;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+section {
+  background-color: #f4f7fd;
+}
+
+section:nth-of-type(1) {
+  grid-area: section1;
+}
+
+section:nth-of-type(2) {
+  grid-area: section2;
+}
+
+section:nth-of-type(3) {
+  grid-area: section3;
+}
+
+.logo {
+  width: clamp(8rem, 9.5vw, 12rem);
+  height: auto;
+  margin: 2rem 0 0.5rem 2rem;
+}
+
+.nav-item {
+  margin-left: 2rem;
+}
+
+button {
+  width: 90%;
+  max-width: 17.3rem;
+  height: 3rem;
+  background: #635fc7;
+  border: #635fc7;
+  border-radius: 0 6.3rem 6.3rem 0;
+}
+
+@media screen and (min-width: 668px) {
+  .mobile-only-logo {
+    display: none;
+  }
+}
+
+h1 {
+  width: auto;
+  height: auto;
+  margin: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+.task-todo,
+.task-doing,
+.task-done {
+  margin-left: 1.5rem;
+}
+
+.status-todo,
+.status-doing,
+.status-done {
+  display: inline-block;
+  width: 0.9rem;
+  height: 0.9rem;
+  border-radius: 50%;
+  margin-right: 0.75rem;
+}
+
+.status-todo {
+  background-color: #49c4e5;
+}
+
+.status-doing {
+  background-color: #8471f2;
+}
+
+.status-done {
+  background-color: #67e2ae;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin: 1.25rem 0;
+  padding: 1rem;
+  background-color: #ffffff;
+  width: 90%;
+  max-width: 17.5rem;
+  min-height: 3.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px 0 rgba(54, 78, 126, 0.1015);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+
+a:hover,
+a:focus {
+  color: blue;
+}
+
+/*--------------- Task Modal ---------------*/
+.task-dialog {
+  border: none;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 28rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  font-family: Plus Jakarta Sans, sans-serif;
+}
+
+.task-form label {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #828fa3;
+}
+
+.task-form input,
+.task-form textarea,
+.task-form select {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  width: 100%;
+}
+
+.modal-header h2 {
+  font-size: 1rem;
+  margin-right: 20rem;
+}
+
+.modal-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000112;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #ff0000;
+  cursor: pointer;
+  font-weight: bold;
+  line-height: 1;
+}
+
+#taskModal::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/*--------------- Mobile (375px - 667px) --------------- */
+@media screen and (min-width: 375px) and (max-width: 667px) {
+  body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(auto, 4);
+    grid-template-areas:
+      "header"
+      "section1"
+      "section2"
+      "section3";
+  }
+
+  nav {
+    display: none;
+  }
+
+  .mobile-only-logo {
+    width: 1.5em;
+    height: 1.6em;
+    top: 1.25em;
+    left: 1em;
+    border-radius: 0.125em;
+    margin: 1.25em 0.5em 1.2em 0;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+
+  h1 {
+    width: 9.9em;
+    height: 1.4em;
+    white-space: nowrap;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+  }
+}
