@@ -10,21 +10,13 @@ A simple, JavaScript-driven Kanban board tailored for monitoring career growth m
 
 ## Technologies Used 👨🏽‍💻
 
-![alt **HTML**](./assets/image.png)
+<img src="./assets/image.png" alt="alt HTML" width="50" height="50" />
 
-##### Semantic structure and accessibility
+<img src="./assets/image-1.png" alt="alt HTML" width="50" height="50" />
 
-![alt **CSS**](./assets/image-1.png)
+<img src="./assets/image-4.png" alt="alt HTML" width="50" height="50" />
 
-##### Responsive layout with Grid/Flexbox
-
-![alt **GitHub**](./assets/image-4.png)
-
-##### Version control and deployment
-
-![alt **Javascript**](./assets/image-2.png)
-
-##### Dynamic task rendering and modal interactions
+<img src="./assets/image-2.png" alt="alt HTML" width="90" height="50" />
 
 ---
 
