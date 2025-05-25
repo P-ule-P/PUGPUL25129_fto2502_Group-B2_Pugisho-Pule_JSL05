@@ -4,7 +4,7 @@
 
 ## Project Description 🧾
 
-A simple, JavaScript-driven Kanban board tailored for monitoring career growth milestones. It presents tasks in a clear visual layout across three workflow stages—🔵 TODO, 🟣 DOING, and 🟢 DONE—using interactive cards and a modal-based editing system. Built with plain JavaScript and direct DOM manipulation, it showcases essential frontend development concepts without relying on external libraries.
+A simple, JavaScript-driven Kanban board tailored for monitoring career growth milestones. It presents tasks in a clear visual layout across three workflow stages—🔵 TODO, 🟣 DOING, and 🟢 DONE—using interactive cards and a modal-based editing system. Built with vanilla JavaScript, it features local storage persistence, form validation, and a mobile-responsive design without external dependencies.
 
 ---
 
@@ -24,43 +24,59 @@ A simple, JavaScript-driven Kanban board tailored for monitoring career growth m
 
 ##### ✅ Task Visualization
 
-- Dynamically renders tasks from JavaScript array
+- Add new tasks via modal form with title, description, and status selection
+- Tasks persist in browser's local storage
+- Real-time task count per column
+- Color-coded status indicators (blue, purple, green)
 
-- Auto-groups by status (todo/doing/done)
+##### ✅ Interactive UI
 
-- Color-coded status indicators
+- Clean modal interface with form validation
+- Responsive design for all screen sizes
+- Mobile-optimized header with compact add button
+- Visual feedback for required fields
 
-##### ✅ Interactive Elements
+##### ✅ Data Persistence
 
-- Click-to-edit task details in modal
-
-- Form fields for title, description, and status updates
-
-- Modal closes via, dedicated close button (✖)
-  and backdrop click
+- Automatic saving to local storage
+- Loads previous state on page refresh
+- Fallback to initial demo tasks if no data exists
 
 ---
 
 ## Setup Instructions 🧩
 
-1. Open index.html in your browser to launch the preloaded Kanban board with 6 example tasks organized into TODO, DOING, and DONE columns.
-
-2. Click any task card to open its editing modal featuring interactive form fields for title, description, and status (selectable via dropdown).
-
-3. Modify task details directly in the modal's input fields, changes cannot be saved yet so that they can appear on the task cards.
-
-4. Close the modal by clicking the red ❌ button (top-right) or anywhere outside the modal window.
-
-5. The responsive design works seamlessly across mobile and desktop browsers without requiring console interactions.
+1. Clone or download the repository
+2. Open `index.html` in any modern browser
+3. The app will automatically:
+   - Load saved tasks from local storage OR
+   - Initialize with demo tasks if first visit
+4. No build tools or dependencies required
 
 ---
 
 ## Usage Instructions 🪄
 
-1. Edit any task by clicking its card to open the modal, where you can update the title, description, and status via dropdown menu.
+### Adding Tasks ➕
 
-2. Track progress visually by moving tasks between the TODO, DOING, and DONE columns through status changes in the modal.
+1. Click "+ Add New Task" button (desktop) or "+" (mobile)
+2. Fill in the form:
+   - Title (required)
+   - Description (required)
+   - Select status from dropdown
+3. Click "Create Task" to save
 
-3. Close the editor instantly by clicking the red ✖ button or anywhere outside the modal window.
+### Viewing Tasks 📺
 
-4. Watch your career progress as completed tasks accumulate in the DONE column with persistent visual feedback.
+- Tasks automatically organize into columns by status
+- Column headers show current task count
+- Color dots indicate status type
+
+---
+
+## Future Enhancements 🚀
+
+- Drag-and-drop task reordering
+- Task editing functionality
+- Multiple board support
+- Dark mode toggle

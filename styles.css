@@ -38,7 +38,7 @@ body {
 }
 
 #side-logo-div {
-  margin-bottom: 2rem;
+  margin: 33px 113px 54px 34px;
   display: flex;
   justify-content: flex-start;
 }
@@ -50,12 +50,13 @@ body {
 
 .boards-nav-links-div {
   display: flex;
+  text-align: start;
   flex-direction: column;
-  gap: 1rem;
 }
 
 h4 {
   font-size: 0.75rem;
+  margin-left: 40px;
   letter-spacing: 0.125rem;
   color: var(--secondary-font-color);
 }
@@ -123,6 +124,7 @@ header {
   display: flex;
   flex-direction: column;
   padding: 2rem;
+  width: 60%;
 }
 
 .card-column-main {
