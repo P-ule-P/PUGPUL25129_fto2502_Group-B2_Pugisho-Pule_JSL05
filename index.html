@@ -65,19 +65,25 @@
         </div>
 
         <label for="task-title">Title</label>
-        <input
-          type="text"
-          id="task-title"
-          placeholder="e.g. Take chilled break"
-          required
-        />
+        <div class="input-container">
+          <input
+            type="text"
+            id="task-title"
+            placeholder="e.g. Take chilled break"
+            required
+          />
+          <div class="custom-error">Please fill out this field</div>
+        </div>
 
         <label for="task-desc">Description</label>
-        <textarea
-          id="task-desc"
-          placeholder="e.g. Pet your dog, have a cup of coffee..."
-          required
-        ></textarea>
+        <div class="input-container">
+          <textarea
+            id="task-desc"
+            placeholder="e.g. Pet your dog, have a cup of coffee..."
+            required
+          ></textarea>
+          <div class="custom-error">Please fill out this field</div>
+        </div>
 
         <label for="task-status">Status</label>
         <select id="task-status" required>

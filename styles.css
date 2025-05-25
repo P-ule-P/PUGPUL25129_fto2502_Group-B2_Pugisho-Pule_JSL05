@@ -283,6 +283,42 @@ dialog {
   justify-content: center;
 }
 
+/* Custom Hover Validation Message */
+.task-form .input-container {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.task-form .custom-error {
+  position: absolute;
+  width: 220px;
+  height: 48px;
+  background: white;
+  color: #828fa3;
+  border-radius: 8px;
+  box-shadow: 0px 10px 20px 0px rgba(54, 78, 126, 0.25);
+  padding: 12px 16px;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.task-form .custom-error::before {
+  content: "❗";
+  color: #ea5555;
+  font-size: 1.2rem;
+}
+
+/* Show error ONLY on hover of empty required fields */
+.task-form input:required:hover:placeholder-shown + .custom-error,
+.task-form textarea:required:hover:placeholder-shown + .custom-error,
+.task-form input:invalid:hover + .custom-error,
+.task-form textarea:invalid:hover + .custom-error {
+  opacity: 1;
+}
+
 /* ========================
    Responsive Styles
 ======================== */
@@ -347,43 +383,8 @@ dialog {
     padding: 0;
     font-size: 1.5rem;
   }
-}
 
-/* Validation styling */
-.validation-message {
-  color: #ea5555;
-  background-color: #fff0f0;
-  padding: 0.75rem 1rem;
-  font-size: 0.875rem;
-  border-radius: 4px;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  border-left: 4px solid #ea5555;
-}
-
-.task-form .input-container {
-  position: relative;
-  margin-bottom: 1rem;
-}
-
-.task-form .hover-validation {
-  position: absolute;
-  right: 0;
-  top: 0;
-  background: #fff0f0;
-  color: #ea5555;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  display: none;
-  align-items: center;
-  gap: 0.25rem;
-  border: 1px solid #ea5555;
-}
-
-.task-form input:hover:placeholder-shown ~ .hover-validation,
-.task-form textarea:hover:placeholder-shown ~ .hover-validation {
-  display: flex;
+  .container {
+    width: 100%;
+  }
 }

@@ -16,7 +16,7 @@ A simple, JavaScript-driven Kanban board tailored for monitoring career growth m
 
 <img src="./assets/image-4.png" alt="alt HTML" width="50" height="50" />
 
-<img src="./assets/image-2.png" alt="alt HTML" width="90" height="50" />
+<img src="./assets/image-2.png" alt="alt HTML" width="50" height="50" />
 
 ---
 
