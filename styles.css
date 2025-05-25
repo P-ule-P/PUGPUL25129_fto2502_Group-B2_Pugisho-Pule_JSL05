@@ -1,6 +1,5 @@
-/* ========================
-   Global & Variables
-======================== */
+/* ======================== Global & Variables ======================== */
+
 :root {
   --primary-color: #ffffff;
   --secondary-color: #f4f7fd;
@@ -25,9 +24,8 @@ body {
   width: 100%;
 }
 
-/* ========================
-   Sidebar
-======================== */
+/* ======================== Sidebar ======================== */
+
 .side-bar {
   display: flex;
   flex-direction: column;
@@ -78,9 +76,8 @@ h4 {
   padding-left: 1.5rem;
 }
 
-/* ========================
-   Layout
-======================== */
+/* ======================== Layout ======================== */
+
 .layout {
   display: flex;
   width: 100%;
@@ -93,9 +90,8 @@ h4 {
   overflow-x: hidden;
 }
 
-/* ========================
-   Header
-======================== */
+/* ======================== Header ======================== */
+
 header {
   display: flex;
   justify-content: space-between;
@@ -117,9 +113,8 @@ header {
   margin: 0;
 }
 
-/* ========================
-   Columns
-======================== */
+/* ======================== Columns ======================== */
+
 .container {
   display: flex;
   flex-direction: column;
@@ -170,9 +165,8 @@ header {
   background-color: #219c90;
 }
 
-/* ========================
-   Tasks
-======================== */
+/* ======================== Tasks ======================== */
+
 .tasks-container {
   list-style: none;
   padding: 0;
@@ -190,9 +184,8 @@ header {
   cursor: pointer;
 }
 
-/* ========================
-   Modal
-======================== */
+/* ======================== Modal ======================== */
+
 dialog {
   position: fixed;
   border: none;
@@ -319,9 +312,8 @@ dialog {
   opacity: 1;
 }
 
-/* ========================
-   Responsive Styles
-======================== */
+/* ======================== Responsive Styles ======================== */
+
 @media screen and (max-width: 1023px) {
   .side-bar {
     display: none;
@@ -358,6 +350,8 @@ dialog {
 .mobile-label {
   display: none;
 }
+
+/* ======================== Mobile Phones ======================== */
 
 @media screen and (max-width: 768px) {
   #header-board-name {

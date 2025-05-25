@@ -2,7 +2,16 @@ import { saveTasks, loadTasks } from "./storage.js";
 import { renderTasks } from "./renderTasks.js";
 
 /**
- * Initializes modal behavior and form submission
+ * Initializes modal behavior and form submission.
+ *
+ * - Opens modal when the "Add Task" button is clicked
+ * - Handles editing existing tasks when clicked
+ * - Submits new tasks via the form
+ * - Validates input before saving
+ * - Saves new task to localStorage and re-renders task board
+ *
+ * @function setupModal
+ * @returns {void}
  */
 export function setupModal() {
   const modal = document.getElementById("taskModal");
@@ -13,17 +22,25 @@ export function setupModal() {
   const descInput = document.getElementById("task-desc");
   const statusSelect = document.getElementById("task-status");
 
-  // Open modal for new task
+  /**
+   * Opens the modal with default empty values for creating a new task.
+   */
   openBtn.addEventListener("click", () => {
     form.reset();
-    statusSelect.value = "todo"; // Reset to default status
+    statusSelect.value = "todo"; // Reset status to default
     modal.showModal();
   });
 
-  // Close modal
+  /**
+   * Closes the modal when the close button is clicked.
+   */
   closeBtn.addEventListener("click", () => modal.close());
 
-  // Click handler for existing tasks
+  /**
+   * Opens the modal pre-filled with existing task data when a task is clicked.
+   *
+   * @param {MouseEvent} e - The click event on a task list item
+   */
   document.addEventListener("click", (e) => {
     const taskElement = e.target.closest(".tasks-container li");
     if (!taskElement) return;
@@ -40,7 +57,14 @@ export function setupModal() {
     }
   });
 
-  // Form submission
+  /**
+   * Handles form submission for creating a new task.
+   * - Validates inputs
+   * - Saves the new task to localStorage
+   * - Re-renders tasks on the board
+   *
+   * @param {SubmitEvent} e - The submit event from the task form
+   */
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -49,7 +73,7 @@ export function setupModal() {
     const status = statusSelect.value;
 
     if (!title || !desc) {
-      form.reportValidity();
+      form.reportValidity(); // Triggers native validation tooltip
       return;
     }
 

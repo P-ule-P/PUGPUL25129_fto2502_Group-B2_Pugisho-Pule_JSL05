@@ -1,3 +1,7 @@
+/**
+ * Initial task data for the kanban board
+ * @type {Array<{id: number, title: string, description: string, status: 'todo'|'doing'|'done'}>}
+ */
 export const initialTasks = [
   {
     id: 1,
