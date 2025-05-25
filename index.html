@@ -11,7 +11,7 @@
       href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap"
       rel="stylesheet"
     />
-    <script src="scripts.js" defer type="module"></script>
+    <script type="module" src="scripts.js" defer></script>
     <title>Career Development Plan</title>
   </head>
   <body>
@@ -31,7 +31,6 @@
 
       <!-- Main Layout -->
       <main id="layout">
-        <!-- Header -->
         <header>
           <div class="header-name-div">
             <img
@@ -41,48 +40,15 @@
             />
             <h2 id="header-board-name">Launch Career</h2>
           </div>
+          <button class="add-task-btn" id="openModalBtn">
+            <span class="desktop-label">+ Add New Task</span>
+            <span class="mobile-label">+</span>
+          </button>
         </header>
 
-        <!-- Columns Container -->
         <div class="container">
           <div class="card-column-main">
-            <!-- TODO Column -->
-            <div class="column-div">
-              <div class="column-head-div">
-                <span class="dot" id="todo-dot"></span>
-                <p class="columnHeader">TODO (4)</p>
-              </div>
-              <ul class="tasks-container task-todo">
-                <li data-task-id="1"></li>
-                <li data-task-id="2"></li>
-                <li><p>Crush Frameworks 🔼️</p></li>
-                <li><p>Conquer React ⚛️</p></li>
-              </ul>
-            </div>
-
-            <!-- DOING Column -->
-            <div class="column-div">
-              <div class="column-head-div">
-                <span class="dot" id="doing-dot"></span>
-                <p class="columnHeader">DOING (2)</p>
-              </div>
-              <ul class="tasks-container task-doing">
-                <li data-task-id="3"></li>
-                <li data-task-id="11"></li>
-              </ul>
-            </div>
-
-            <!-- DONE Column -->
-            <div class="column-div">
-              <div class="column-head-div">
-                <span class="dot" id="done-dot"></span>
-                <p class="columnHeader">DONE (2)</p>
-              </div>
-              <ul class="tasks-container task-done">
-                <li data-task-id="12"></li>
-                <li data-task-id="13"></li>
-              </ul>
-            </div>
+            <!-- Columns injected dynamically by JS -->
           </div>
         </div>
       </main>
@@ -90,29 +56,37 @@
 
     <!-- Modal -->
     <dialog id="taskModal" class="task-dialog">
-      <form method="dialog" class="task-form">
+      <form method="dialog" class="task-form" id="taskForm">
         <div class="modal-header">
-          <h3 class="modal-title">Task</h3>
+          <h3 class="modal-title">Add New Task</h3>
           <button type="button" class="close-btn" aria-label="Close">
             &times;
           </button>
         </div>
-        <label>
-          Title
-          <input type="text" id="task-title" />
-        </label>
-        <label>
-          Description
-          <textarea id="task-desc" rows="4"></textarea>
-        </label>
-        <label>
-          Status
-          <select id="task-status">
-            <option value="todo">todo</option>
-            <option value="doing">doing</option>
-            <option value="done">done</option>
-          </select>
-        </label>
+
+        <label for="task-title">Title</label>
+        <input
+          type="text"
+          id="task-title"
+          placeholder="e.g. Take chilled break"
+          required
+        />
+
+        <label for="task-desc">Description</label>
+        <textarea
+          id="task-desc"
+          placeholder="e.g. Pet your dog, have a cup of coffee..."
+          required
+        ></textarea>
+
+        <label for="task-status">Status</label>
+        <select id="task-status" required>
+          <option value="todo">todo</option>
+          <option value="doing">doing</option>
+          <option value="done">done</option>
+        </select>
+
+        <button type="submit" class="submit-btn">Create Task</button>
       </form>
     </dialog>
   </body>
