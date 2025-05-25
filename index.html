@@ -4,36 +4,98 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="assets\favicon.svg" type="image/x-icon" />
+    <link rel="icon" href="assets/favicon.svg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap"
       rel="stylesheet"
     />
-    <script src="scripts.js" defer></script>
+    <script src="scripts.js" defer type="module"></script>
     <title>Career Development Plan</title>
   </head>
   <body>
-    <!--------------- Navigation Sidebar --------------->
-    <nav>
-      <img src="assets\logo-light.svg" alt="Kanban Logo" class="logo" />
-      <div class="nav-item">
-        <h6>ALL BOARDS (1)</h6>
-      </div>
-      <div>
-        <button>
-          <p id="button-text">Launch Career</p>
-        </button>
-      </div>
-    </nav>
+    <div class="layout">
+      <!-- Sidebar -->
+      <aside class="side-bar">
+        <div id="side-logo-div">
+          <img src="assets/logo-light.svg" alt="Kanban Logo" id="logo" />
+        </div>
+        <div class="boards-nav-links-div">
+          <h4>ALL BOARDS (1)</h4>
+          <button class="board-btn">
+            <span>Launch Career</span>
+          </button>
+        </div>
+      </aside>
 
-    <!--------------- Task Modal --------------->
+      <!-- Main Layout -->
+      <main id="layout">
+        <!-- Header -->
+        <header>
+          <div class="header-name-div">
+            <img
+              src="assets/favicon.svg"
+              alt="Mobile Logo"
+              class="logo-mobile"
+            />
+            <h2 id="header-board-name">Launch Career</h2>
+          </div>
+        </header>
+
+        <!-- Columns Container -->
+        <div class="container">
+          <div class="card-column-main">
+            <!-- TODO Column -->
+            <div class="column-div">
+              <div class="column-head-div">
+                <span class="dot" id="todo-dot"></span>
+                <p class="columnHeader">TODO (4)</p>
+              </div>
+              <ul class="tasks-container task-todo">
+                <li data-task-id="1"></li>
+                <li data-task-id="2"></li>
+                <li><p>Crush Frameworks 🔼️</p></li>
+                <li><p>Conquer React ⚛️</p></li>
+              </ul>
+            </div>
+
+            <!-- DOING Column -->
+            <div class="column-div">
+              <div class="column-head-div">
+                <span class="dot" id="doing-dot"></span>
+                <p class="columnHeader">DOING (2)</p>
+              </div>
+              <ul class="tasks-container task-doing">
+                <li data-task-id="3"></li>
+                <li data-task-id="11"></li>
+              </ul>
+            </div>
+
+            <!-- DONE Column -->
+            <div class="column-div">
+              <div class="column-head-div">
+                <span class="dot" id="done-dot"></span>
+                <p class="columnHeader">DONE (2)</p>
+              </div>
+              <ul class="tasks-container task-done">
+                <li data-task-id="12"></li>
+                <li data-task-id="13"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Modal -->
     <dialog id="taskModal" class="task-dialog">
       <form method="dialog" class="task-form">
         <div class="modal-header">
-          <h2 class="modal-title">Task</h2>
-          <button type="button" class="close-btn" aria-label="Close">✖</button>
+          <h3 class="modal-title">Task</h3>
+          <button type="button" class="close-btn" aria-label="Close">
+            &times;
+          </button>
         </div>
         <label>
           Title
@@ -53,62 +115,5 @@
         </label>
       </form>
     </dialog>
-
-    <!--------------- Header --------------->
-    <header>
-      <div>
-        <h1>
-          <span
-            ><img
-              src="assets\favicon.svg"
-              alt="Mobile-only image"
-              class="mobile-only-logo" /></span
-          >Launch Career
-        </h1>
-      </div>
-    </header>
-
-    <!--------------- Section Columns --------------->
-    <!-- TODO Column -->
-    <section class="task-todo">
-      <div>
-        <h6><span class="status-todo"></span>TODO (4)</h6>
-      </div>
-      <!-- Tasks container for TODO -->
-      <ul>
-        <li data-task-id="1"></li>
-        <li data-task-id="2"></li>
-        <li>
-          <p>Crush Frameworks 🖼️</p>
-        </li>
-        <li>
-          <p>Conquer React ⚛️</p>
-        </li>
-      </ul>
-    </section>
-
-    <!-- DOING Column -->
-    <section class="task-doing">
-      <div>
-        <h6><span class="status-doing"></span>DOING (2)</h6>
-      </div>
-      <!-- Tasks container for DOING -->
-      <ul>
-        <li data-task-id="3"></li>
-        <li data-task-id="11"></li>
-      </ul>
-    </section>
-
-    <!-- DONE Column -->
-    <section class="task-done">
-      <div>
-        <h6><span class="status-done"></span>DONE (2)</h6>
-      </div>
-      <!-- Tasks container for DONE -->
-      <ul>
-        <li data-task-id="12"></li>
-        <li data-task-id="13"></li>
-      </ul>
-    </section>
   </body>
 </html>

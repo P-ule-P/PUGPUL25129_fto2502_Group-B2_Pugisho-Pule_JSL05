@@ -216,7 +216,6 @@ a:focus {
 
 .modal-header h2 {
   font-size: 1rem;
-  margin-right: 20rem;
 }
 
 .modal-title {
@@ -226,10 +225,12 @@ a:focus {
 }
 
 .close-btn {
+  display: flex;
+  justify-content: end;
   background: none;
   border: none;
   font-size: 1.5rem;
-  color: #ff0000;
+  color: #ea5555;
   cursor: pointer;
   font-weight: bold;
   line-height: 1;
