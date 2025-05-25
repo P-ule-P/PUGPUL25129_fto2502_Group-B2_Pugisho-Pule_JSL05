@@ -27,7 +27,13 @@ export function renderTasks(tasks) {
       <ul class="tasks-container ${status}">
         ${tasks
           .filter((t) => t.status === status)
-          .map((t) => `<li><p>${t.title}</p></li>`)
+          .map(
+            (t) => `
+              <li data-task-id="${t.id}">
+                <p>${t.title}</p>
+              </li>
+            `
+          )
           .join("")}
       </ul>
     `;
